@@ -123,6 +123,17 @@ div.container_upload_file_main
     opacity: 0.95;
 }
 
+div.container_upload_file_main span.container_logout
+{
+    position: relative;
+    top: 1%;
+    left: 1%;
+    width: 500px;
+    height: 30px;
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+}
+
 div.container_upload_file_main div.container_upload_file
 {
     position: relative;

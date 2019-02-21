@@ -70,9 +70,15 @@
                                     $username = filter_var($_POST['login'],FILTER_SANITIZE_STRING);
                                     $password = filter_var($_POST['password'],FILTER_SANITIZE_STRING);
                                 }
-
+                                
+                                
                                 if(($username == "username" && $password == "password") || ($_SESSION['online'] == 1)){
-                                    echo "<div style=\" position: absolute; width: 200px; margin-top: 15%; margin: 0 auto; padding-top: 20px; text-align: center; font-family: 'Quicksand', sans-serif; font-size: 10px; color: red;\"><b> Nastąpiło poprawne zalogowanie! </br> <a href='index.php?action=logout'> Wyloguj </a> </b></div>";
+                                    
+                                    if($_SESSION['online'] == 0)
+                                        $_SESSION['user'] = $username;
+                                    
+                                    echo "<div style=\" position: absolute; width: 200px; margin-top: 15%; margin: 0 auto; padding-top: 20px; text-align: center; font-family: 'Quicksand', sans-serif; font-size: 10px; color: red;\"><b> Nastąpiło poprawne zalogowanie! </b></div>";
+                                    
                                     $_SESSION['time'] = time();
                                     $_SESSION['specification_info'] = $_SERVER['HTTP_USER_AGENT'];
                                     header('Location: login.php');

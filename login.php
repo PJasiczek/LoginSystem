@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html>
     <head>
         <meta charset="utf-8">
@@ -15,6 +18,9 @@
     </head>
     <body>
         <div class="container_upload_file_main">
+            <?php
+                echo "<span class='container_logout'> <a href='index.php?action=logout'> <i style='font-size:15px; color:black' class='fa'>&#xf08b;</i> </a> Witaj ".ucwords($_SESSION['user'])." ! </span>";
+            ?>
             <div class="container_upload_file">
                 <div class="upload_file">
                     <form action="login.php" method="post" enctype="multipart/form-data">
